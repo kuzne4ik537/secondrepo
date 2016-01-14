@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	
+		function count(x){
+			var first= document.getElementById('first').value;
+			var second = document.getElementById('second').value;
+			if( first=='' ||second ==''){
+				alert("Empty");
+				return false;
+			}
+			else if(isNaN(first) || isNaN(second)){
+				alert("not a number");
+				return false;
+			}
+			else{
+				first = parseFloat(first);
+				second = parseFloat(second);
+				if(document.getElementById(x.id) == document.getElementById('plus'))
+						document.getElementById('output').innerHTML += first + second+'<br>';
+				
+				else if(document.getElementById(x.id) == document.getElementById('minus'))
+						document.getElementById('output').innerHTML += first - second+'<br>';
+
+				else if(document.getElementById(x.id) == document.getElementById('mult'))
+						document.getElementById('output').innerHTML += first * second+'<br>';
+
+				else if(document.getElementById(x.id) == document.getElementById('divide'))
+						document.getElementById('output').innerHTML += first / second+'<br>';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div><input type="" id="first"><input type="" id="second"></div>
+	<div>
+		<button id="plus" onclick = "count(this)">+</button>
+		<button id="minus" onclick = "count(this)">-</button>
+		<button id="mult" onclick = "count(this)">*</button>
+		<button id="divide" onclick = "count(this)">/</button>
+	</div>
+	<div id="output"></div>
+	
+</body>
+</html>
